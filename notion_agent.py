@@ -30,6 +30,8 @@ base_url_openrouter = os.getenv('BASE_URL_OPENROUTER', 'https://openrouter.ai/ap
 api_key_openai = os.getenv('OPENAI_API_KEY', 'no-openai-api-key-provided')
 api_key_llm = os.getenv('LLM_API_KEY', 'no-llm-api-key-provided')
 is_ollama = "localhost" in base_url_openai.lower()
+
+
 reasoner_llm_model = os.getenv('REASONER_MODEL', 'openai/o3-mini')
 reasoner = Agent(  
     OpenAIModel(reasoner_llm_model, base_url=base_url_openrouter, api_key=api_key_llm),

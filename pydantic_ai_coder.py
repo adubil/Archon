@@ -16,9 +16,9 @@ from typing import List
 load_dotenv()
 
 llm = os.getenv('PRIMARY_MODEL', 'gpt-4o-mini')
-base_url = os.getenv('BASE_URL', 'https://api.openai.com/v1')
-api_key = os.getenv('LLM_API_KEY', 'no-llm-api-key-provided')
-model = OpenAIModel(llm, base_url=base_url, api_key=api_key)
+base_url_openai = os.getenv('BASE_URL_OPENAI', 'https://api.openai.com/v1')
+api_key_openai = os.getenv('OPENAI_API_KEY', 'no-llm-api-key-provided')
+model = OpenAIModel(llm, base_url=base_url_openai, api_key=api_key_openai)
 
 logfire.configure(send_to_logfire='if-token-present')
 
